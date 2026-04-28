@@ -84,12 +84,108 @@ header h3 {
   min-height: 75vh;
   height: auto;
   padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  position: relative;
+  isolation: isolate;
 }
 
 .session h3 {
   font-size: clamp(2.4rem, 6vw, 3.5rem);
   color: var(--stone-brown);
   text-align: center;
+}
+
+.decorated-section > :not(.section-art) {
+  position: relative;
+  z-index: 1;
+}
+
+.decorated-section {
+  overflow: hidden;
+}
+
+.section-art {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+  fill: none;
+  stroke: rgba(94, 80, 63, 0.24);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.95;
+}
+
+.section-art circle,
+.section-art ellipse {
+  fill: rgba(198, 172, 143, 0.14);
+}
+
+.section-art rect,
+.section-art path {
+  vector-effect: non-scaling-stroke;
+}
+
+.art-ui-window {
+  top: 6rem;
+  right: max(1rem, 4vw);
+  width: clamp(150px, 17vw, 250px);
+  transform: rotate(7deg);
+}
+
+.art-sparkles {
+  bottom: 2rem;
+  left: max(1rem, 5vw);
+  width: clamp(120px, 14vw, 210px);
+  fill: rgba(198, 172, 143, 0.12);
+  stroke-width: 5;
+  transform: rotate(-10deg);
+}
+
+.art-flow {
+  top: 7rem;
+  left: max(0.5rem, 5vw);
+  width: clamp(180px, 22vw, 330px);
+  stroke-dasharray: 10 16;
+  transform: rotate(-8deg);
+}
+
+.art-cursor {
+  right: max(1rem, 8vw);
+  bottom: 7rem;
+  width: clamp(120px, 14vw, 190px);
+  fill: rgba(198, 172, 143, 0.1);
+  transform: rotate(9deg);
+}
+
+.art-avatar-frame {
+  top: 12rem;
+  left: max(0.5rem, 4vw);
+  width: clamp(130px, 16vw, 230px);
+  transform: rotate(-8deg);
+}
+
+.art-loops {
+  right: max(0.5rem, 3vw);
+  bottom: 9rem;
+  width: clamp(170px, 22vw, 320px);
+  stroke-dasharray: 14 14;
+  transform: rotate(8deg);
+}
+
+.art-coins {
+  top: 8rem;
+  left: max(0.5rem, 5vw);
+  width: clamp(150px, 18vw, 260px);
+  fill: rgba(198, 172, 143, 0.09);
+  transform: rotate(-8deg);
+}
+
+.art-hud {
+  right: max(0.5rem, 4vw);
+  bottom: 6rem;
+  width: clamp(180px, 22vw, 320px);
+  transform: rotate(6deg);
 }
 
 .works {
@@ -661,6 +757,15 @@ a:active {
   .about-franca img {
     width: 100%;
     height: auto;
+  }
+  .section-art {
+    opacity: 0.42;
+  }
+  .art-ui-window,
+  .art-cursor,
+  .art-avatar-frame,
+  .art-coins {
+    display: none;
   }
   .testimonials {
     grid-template-columns: 1fr;
