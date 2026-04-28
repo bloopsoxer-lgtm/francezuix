@@ -63,6 +63,7 @@ const setupScrollMotion = () => {
     ...document.querySelectorAll(".service"),
     ...document.querySelectorAll(".price-heading"),
     ...document.querySelectorAll(".price-card"),
+    ...document.querySelectorAll(".testimonial"),
     document.querySelector(".eunaosei"),
     document.querySelector(".content h3"),
     document.querySelector(".content h4"),
